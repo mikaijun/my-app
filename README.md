@@ -81,7 +81,7 @@ stories: ['../src/components/**/stories.@(js|jsx|ts|tsx|mdx)'],
 - 使用するCSS
   - styled-components、 scss、 TailwindなどのCSSフレームワーク
 - storybookをデプロイしたい
-  - Chromatic(https://zenn.dev/keitakn/articles/storybook-deploy-to-chromatic)使えば無料で簡単にできる。
+  - [Chromatic](https://zenn.dev/keitakn/articles/storybook-deploy-to-chromatic)使えば無料で簡単にできる。
   - [こんな感じ](https://63def1ebc49738e3f8edb768-xjvpgjxyla.chromatic.com/?path=/story/layouts-worrylayout--primary)でgithubアカウントとかあれば見れます
 
 ## ディレクトリ構成の基盤
