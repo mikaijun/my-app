@@ -1,4 +1,6 @@
-## create-next-appコマンド
+## 導入からコード整形まで
+
+### create-next-appコマンド
 ```js
 ~ % npx create-next-app@latest
 Need to install the following packages:
@@ -19,35 +21,31 @@ Would you like to use `src/` directory with this project? › Yes
 What import alias would you like configured? › @/*
 ```
 
-## 作成直後のtsconfig.json
-特段編集はしない
-```ts
+### EslintとPrettier
+下記の記事を参考に導入
+
+https://zenn.dev/akino/articles/96ae4136447433#eslint%E3%81%AE%E5%B0%8E%E5%85%A5
+
+## ファイル保存・ペーストしたら自動整形されるようにする(任意)
+VSCodeのsettings.json を開く。
+コマンドパレットを開く
+ショートカットキー command + shift + P または F1 でコマンドパレットを表示
+検索ワードを入れる
+settings と入力
+開いた settings.json に自動フォーマット設定を追記します。
+```js
 {
-  "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+  // formatter
+  "editor.formatOnSave": true, // ファイル保存時の自動フォーマット有効
+  "editor.formatOnPaste": true, // ペーストした文字の自動フォーマット有効
+  "editor.formatOnType": true, // 文字入力行の自動フォーマット有効
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // デフォルトフォーマッターをPrettierに指定
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true // ファイル保存時に ESLint でフォーマット
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
 }
 ```
+ここまでで ESLint/Prettier と VSCode の設定は完了です。
 
-## EslintとPrettier
-下記の記事を参考に導入
-https://zenn.dev/akino/articles/96ae4136447433#eslint%E3%81%AE%E5%B0%8E%E5%85%A5
+
+## 導入からコード整形まで
