@@ -78,6 +78,7 @@ stories: ['../src/components/**/stories.@(js|jsx|ts|tsx|mdx)'],
 を作成した上で`yarn storybook`で作成したコンポーネントが見れる
 
 ## 今後やること、決めたいこと
+- コンポーネントテストの実装(jestなど)
 - 使用するCSS
   - styled-components、 scss、 TailwindなどのCSSフレームワーク
 - storybookをデプロイしたい
