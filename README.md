@@ -26,6 +26,8 @@ What import alias would you like configured? › @/*
 
 https://zenn.dev/akino/articles/96ae4136447433#eslint%E3%81%AE%E5%B0%8E%E5%85%A5
 
+.eslintrc.jsonは[こちら](https://github.com/mikaijun/my-app/blob/master/.eslintrc.json)
+
 ## ファイル保存・ペーストしたら自動整形されるようにする(任意)
 
 VSCode の settings.json を開く。
