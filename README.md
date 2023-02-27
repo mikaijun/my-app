@@ -83,7 +83,7 @@ stories: ['../src/components/**/stories.@(js|jsx|ts|tsx|mdx)'],
 ```
 
 ### テストコード導入
-(こちら)[https://storybook.js.org/docs/react/essentials/actions#automatically-matching-args]を参考に導入。
+[こちら](https://storybook.js.org/docs/react/essentials/actions#automatically-matching-args)を参考に導入。
 テストコードは下記サンプルコンポーネントで実装して見ました。
 
 ### サンプルコンポーネントの作成
