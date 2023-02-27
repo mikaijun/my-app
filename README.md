@@ -1,4 +1,5 @@
-## create-next-appコマンド
+## create-next-app コマンド
+
 ```js
 ~ % npx create-next-app@latest
 Need to install the following packages:
@@ -19,18 +20,21 @@ Would you like to use `src/` directory with this project? › Yes
 What import alias would you like configured? › @/*
 ```
 
-## EslintとPrettier
-下記の記事を参考に導入。導入すれば```yarn format```で整形される
+## Eslint と Prettier
+
+下記の記事を参考に導入。導入すれば`yarn format`で整形される
 
 https://zenn.dev/akino/articles/96ae4136447433#eslint%E3%81%AE%E5%B0%8E%E5%85%A5
 
 ## ファイル保存・ペーストしたら自動整形されるようにする(任意)
-VSCodeのsettings.json を開く。
+
+VSCode の settings.json を開く。
 コマンドパレットを開く
 ショートカットキー command + shift + P または F1 でコマンドパレットを表示
 検索ワードを入れる
 settings と入力
 開いた settings.json に自動フォーマット設定を追記します。
+
 ```js
 {
   // formatter
@@ -43,34 +47,41 @@ settings と入力
   },
 }
 ```
+
 ここまでで ESLint/Prettier と VSCode の設定は完了です。
 
+## StoryBook の導入
 
-## StoryBookの導入
 ### インストール
+
 ```
 npx sb init
 ```
-途中で表示される```Do you want to run the 'eslintPlugin' migration on your project?```はnを選択。
-これはESLintのeslint-plugin-storybookに関するメッセージで上記で```.eslintrc.json```ファイルを作成したので不要(だと思われる)。
 
-### src/storiesの削除
+途中で表示される`Do you want to run the 'eslintPlugin' migration on your project?`は n を選択。
+これは ESLint の eslint-plugin-storybook に関するメッセージで上記で`.eslintrc.json`ファイルを作成したので不要(だと思われる)。
+
+### src/stories の削除
+
 ```
 rm -rf src/stories
 ```
-初期の状態だとsrcの直下にstoriesが作られている。
-下記URLのようにコンポーネントの実装、storybook、テストの位置を一緒にしたいためである。
+
+初期の状態だと src の直下に stories が作られている。
+下記 URL のようにコンポーネントの実装、storybook、テストの位置を一緒にしたいためである。
 
 https://qiita.com/takano-h/items/c1796c05247ac3ae9964
 
-### storiesの適用箇所の修正
-上記の通りコンポーネントの中にstorybookとテストを入れる予定なので```.storybook/main.js```のstoriesを以下のように変える。
+### stories の適用箇所の修正
+
+上記の通りコンポーネントの中に storybook とテストを入れる予定なので`.storybook/main.js`の stories を以下のように変える。
 
 ```
 stories: ['../src/components/**/stories.@(js|jsx|ts|tsx|mdx)'],
 ```
 
 ### サンプルコンポーネントの作成
+
 [index.tsx](https://github.com/mikaijun/my-app/blob/master/src/components/atoms/Button/index.tsx)
 
 [stories.tsx](https://github.com/mikaijun/my-app/blob/master/src/components/atoms/Button/stories.tsx)
@@ -78,14 +89,16 @@ stories: ['../src/components/**/stories.@(js|jsx|ts|tsx|mdx)'],
 を作成した上で`yarn storybook`で作成したコンポーネントが見れる
 
 ## 今後やること、決めたいこと
-- コンポーネントテストの実装(jestなど)
-- 使用するCSS
-  - styled-components、 scss、 TailwindなどのCSSフレームワーク
-- storybookをデプロイしたい
+
+- コンポーネントテストの実装(jest など)
+- 使用する CSS
+  - styled-components、 scss、 Tailwind などの CSS フレームワーク
+- storybook をデプロイしたい
   - [Chromatic](https://zenn.dev/keitakn/articles/storybook-deploy-to-chromatic)使えば無料で簡単にできる。
-  - [こんな感じ](https://63def1ebc49738e3f8edb768-xjvpgjxyla.chromatic.com/?path=/story/layouts-worrylayout--primary)でgithubアカウントとかあれば見れます
+  - [こんな感じ](https://63def1ebc49738e3f8edb768-xjvpgjxyla.chromatic.com/?path=/story/layouts-worrylayout--primary)で github アカウントとかあれば見れます
 
 ## ディレクトリ構成の基盤
+
 ```
 .
 ├── README.md
