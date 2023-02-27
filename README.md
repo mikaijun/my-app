@@ -82,6 +82,10 @@ https://qiita.com/takano-h/items/c1796c05247ac3ae9964
 stories: ['../src/components/**/stories.@(js|jsx|ts|tsx|mdx)'],
 ```
 
+### テストコード導入
+(こちら)[https://storybook.js.org/docs/react/essentials/actions#automatically-matching-args]を参考に導入。
+テストコードは下記サンプルコンポーネントで実装して見ました。
+
 ### サンプルコンポーネントの作成
 
 [index.tsx](https://github.com/mikaijun/my-app/blob/master/src/components/atoms/Button/index.tsx)
