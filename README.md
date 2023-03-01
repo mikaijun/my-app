@@ -94,7 +94,7 @@ stories: ['../src/components/**/stories.@(js|jsx|ts|tsx|mdx)'],
 
 を作成した上で`yarn storybook`で作成したコンポーネントが見れる
 
-## 今後やること、決めたいこと
+## TODO
 
 - コンポーネントテストの実装(jest など)
 - 使用する CSS
